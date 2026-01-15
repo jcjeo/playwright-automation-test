@@ -8,3 +8,7 @@ test('Check out two items in swag labs', async ({ page }) => {
     await swagLabsLogin(page);
     await checkoutTwoItems(page);
 });
+
+test('Check out five items in swag labs', async ({ page }) => {
+
+});
