@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  p {
-    text-align: left;
-  }
-</style>
 </head>
 <body>
 
