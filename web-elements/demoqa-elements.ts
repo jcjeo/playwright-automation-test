@@ -51,7 +51,7 @@ export class DemoQaElements {
     get radioButton() {
         return {
             yes: this.page.getByRole('radio', { name: 'Yes' }),
-            impressive: this.page.getByRole('radio', { name: 'Impressive' }),
+            impressive: this.page.locator('label').filter({ hasText: 'Impressive' }),
             result: this.page.getByRole('paragraph').getByText('Impressive')
         }
     }
@@ -61,7 +61,7 @@ export class DemoQaElements {
             addBtn: this.page.getByRole('button', { name: 'Add' }),
             firstName: this.page.getByRole('textbox', { name: 'First Name' }),
             lastName: this.page.getByRole('textbox', { name: 'Last Name' }),
-            email: this.page.getByRole('textbox', { name: 'Email' }),
+            email: this.page.getByRole('textbox', { name: 'name@example.com' }),
             age: this.page.getByRole('textbox', { name: 'Age' }),
             salary: this.page.getByRole('textbox', { name: 'Salary' }),
             department: this.page.getByRole('textbox', { name: 'Department' }),
