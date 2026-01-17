@@ -32,5 +32,29 @@ export async function checkBoxSection(page: Page) {
     await expect(elements.checkBox.result).toBeVisible();
 }
 
+export async function radioButtonSection(page: Page) {
+    const elements = new DemoQaElements(page);
+
+    await elements.sideMenu.elements.click();
+    await elements.elementsSideMenuItemsList.radioButton.click();
+    await elements.radioButton.impressive.click();
+    await expect(elements.radioButton.result).toBeVisible();
+}
+
+export async function webTablesSection(page: Page) {
+    const elements = new DemoQaElements(page);
+
+    await elements.sideMenu.elements.click();
+    await elements.elementsSideMenuItemsList.webTables.click();
+    await elements.webTables.addBtn.click();
+    await elements.webTables.firstName.fill('TEST FIRST NAME');
+    await elements.webTables.lastName.fill('TEST LAST NAME');
+    await elements.webTables.email.fill('testname@example.com');
+    await elements.webTables.age.fill('25');
+    await elements.webTables.salary.fill('25000');
+    await elements.webTables.department.fill('TEST QA DEPARTMENT');
+    await elements.webTables.submitBtn.click();
+}
+
 
 

@@ -47,6 +47,36 @@ export class DemoQaElements {
             result: this.page.locator('#result')
         }
     }
+
+    get radioButton() {
+        return {
+            yes: this.page.getByRole('radio', { name: 'Yes' }),
+            impressive: this.page.getByRole('radio', { name: 'Impressive' }),
+            result: this.page.getByRole('paragraph').getByText('Impressive')
+        }
+    }
+
+    get webTables() {
+        return {
+            addBtn: this.page.getByRole('button', { name: 'Add' }),
+            firstName: this.page.getByRole('textbox', { name: 'First Name' }),
+            lastName: this.page.getByRole('textbox', { name: 'Last Name' }),
+            email: this.page.getByRole('textbox', { name: 'Email' }),
+            age: this.page.getByRole('textbox', { name: 'Age' }),
+            salary: this.page.getByRole('textbox', { name: 'Salary' }),
+            department: this.page.getByRole('textbox', { name: 'Department' }),
+            submitBtn: this.page.getByRole('button', { name: 'Submit' }),
+            searchBox: this.page.getByRole('textbox', { name: 'Type to search' }),
+            editBtn: this.page.locator('#edit-record-2 > svg > path'),
+            deleteBtn: this.page.locator('#delete-record-5 > svg')
+        }
+    }
+
+    get buttons() {
+        return {
+
+        }
+    }
 }
 
 /*
