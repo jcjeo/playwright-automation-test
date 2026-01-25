@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import { demoqaPage } from '../web-elements/demoqa-elements';
-import { verifyDemoQaLists, textBoxSection, checkBoxSection, radioButtonSection, webTablesSection } from '../test-actions/demoqa-actions';
+import { verifyDemoQaLists, textBoxSection, checkBoxSection, radioButtonSection, webTablesSection, sliderSection } from '../test-actions/demoqa-actions';
 
 test('Verify the items in DemoQA Page', async ({ page }) => {
     await demoqaPage(page);
@@ -25,4 +25,9 @@ test('Select the impressive option on the Radio Button Section', async ({ page }
 test('Add a new row on the Web Tables Section', async ({ page }) => {
     await demoqaPage(page);
     await webTablesSection(page);
+});
+
+test('Interact with the Slider on the Widgets Section', async ({ page }) => {
+    await demoqaPage(page);
+    await sliderSection(page);
 });

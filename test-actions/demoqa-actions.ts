@@ -56,5 +56,17 @@ export async function webTablesSection(page: Page) {
     await elements.webTables.submitBtn.click();
 }
 
+export async function sliderSection(page: Page) {
+    const elements = new DemoQaElements(page);
 
+    await elements.sideMenu.widgets.click();
+    await elements.widgetsSideMenuItemsList.slider.click();
 
+    // The range slider in demoqa is input[type='range']
+    // We can directly fill the value
+    const targetValue = '100';
+    await elements.slider.input.fill(targetValue);
+
+    // Verify the value in the slider value display
+    await expect(elements.slider.value).toHaveValue(targetValue);
+}

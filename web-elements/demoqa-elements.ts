@@ -23,6 +23,7 @@ export class DemoQaElements {
             elements: this.page.getByText('Elements'),
             practiceForm: this.page.getByText('Practice Form'),
             alertsFrameWindows: this.page.getByText('Alerts, Frame & Windows'),
+            widgets: this.page.getByText('Widgets'),
         }
     }
 
@@ -37,6 +38,12 @@ export class DemoQaElements {
             brokenLinksImages: this.page.getByRole('listitem').filter({ hasText: 'Broken Links - Images' }),
             uploadAndDownload: this.page.getByRole('listitem').filter({ hasText: 'Upload and Download' }),
             dynamicProperties: this.page.getByRole('listitem').filter({ hasText: 'Dynamic Properties' }),
+        }
+    }
+
+    get widgetsSideMenuItemsList() {
+        return {
+            slider: this.page.getByRole('listitem').filter({ hasText: 'Slider' }),
         }
     }
 
@@ -75,6 +82,13 @@ export class DemoQaElements {
     get buttons() {
         return {
 
+        }
+    }
+
+    get slider() {
+        return {
+            input: this.page.locator('.range-slider'), // Adjust locator if needed, usually input[type="range"]
+            value: this.page.locator('#sliderValue')
         }
     }
 }
