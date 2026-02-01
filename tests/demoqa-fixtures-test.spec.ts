@@ -14,7 +14,15 @@ const test = base.extend<DemoQaFixtures>({
     }
 });
 
+// test.beforeEach(async ({ demoStudentRegistrationForm }) => {
+//     await demoStudentRegistrationForm.goto();
+// });
+
 test('Fill student registration form', async ({ demoStudentRegistrationForm }) => {
-    await fillStudentRegistrationForm(demoStudentRegistrationForm);
+    await test.step('Complete the Student Form', async () => {
+        await fillStudentRegistrationForm(demoStudentRegistrationForm);
+    });
+});
+test.afterEach(async ({ demoStudentRegistrationForm }) => {
     await demoStudentRegistrationForm.closePage();
 });
